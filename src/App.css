@@ -1,0 +1,157 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.noteslogo{
+  width: 50px; 
+  margin-top: 50px;
+}
+body{
+  background-color: darkslategray;
+}
+.main-div{
+  background-color: rgb(13, 225, 137);
+  width: 400px;
+  height: 400px;
+  margin-top: 50px;
+}
+
+.input{
+  width: 200px;
+  padding: 10px;
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.addIcon{
+cursor: pointer;
+color: #3498db;
+
+width: 15px;
+padding-left: 10px;
+
+}
+
+
+
+
+.trash{
+
+width: 50px;
+margin-left: 20px;
+margin-top: 25PX;
+margin-bottom: 70px;
+cursor: pointer;
+
+}
+.h3{
+  width: 200px;
+  height: 30px;
+
+}
+.card-title{
+  width: 100px;
+  background-color: black;
+}
+.sholList{
+  background-color: #3498db;
+  display: flex;
+}
+.eachItem{
+  display: flex;
+  background-color: #3498db;
+  height: auto;
+}
+
+.eachItem:hover{
+  background-color: #2a79ae;
+}
+
+.eachItem h5{
+  width: 300px;
+  margin: 20px;
+  /* overflow: hidden;
+  white-space: nowrap; */
+ 
+  word-wrap: break-word; /* Allow long words to break and wrap */
+    
+}
+
+.eachItem h5:hover{
+  background-color: brown;
+}
+
+.eachItem i{
+  margin-left: 10px;
+  margin-top: 15px;
+  padding-right: 10px;
+  
+}
+
+.eachItem i:hover{
+  color: red;
+}
+
+.hover-element::after {
+  content: " CheckList"; /* Initial text */
+  color: #2a79ae;
+}
+
+.hover-element:hover::after {
+  content: "RemoveList"; /* Text to display on hover */
+  color: red;
+}
+
+.myButton::before {
+    content: "Click me";
+}
+
+.myButton:hover::before {
+    content: "Clicked";
+}
+
+.space{
+  margin-top: 20px;
+}
