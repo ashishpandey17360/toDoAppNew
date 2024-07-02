@@ -58,7 +58,7 @@ body{
 .input{
   width: 200px;
   padding: 10px;
-  border: 2px solid #3498db;
+  border: 2px solid #E5D9F2;
   border-radius: 8px;
   outline: none;
   font-size: 16px;
@@ -79,11 +79,12 @@ padding-left: 10px;
 
 .trash{
 
-width: 50px;
+width: 1px;
 margin-left: 20px;
 margin-top: 25PX;
 margin-bottom: 70px;
 cursor: pointer;
+color: #2a79ae;
 
 }
 .h3{
@@ -93,20 +94,26 @@ cursor: pointer;
 }
 .card-title{
   width: 100px;
-  background-color: black;
+  height: 40px;
+  background-color: rgb(33, 50, 50);
+ padding-top: 14px;
+ padding-bottom: 5px;
+ padding-left: 10px;
+ padding-right: 10px;
 }
 .sholList{
-  background-color: #3498db;
+  background-color: darkslategray;
+
   display: flex;
 }
 .eachItem{
   display: flex;
-  background-color: #3498db;
+  background-color: darkslategrey;
   height: auto;
 }
 
 .eachItem:hover{
-  background-color: #2a79ae;
+  background-color: darkslategrey;
 }
 
 .eachItem h5{
@@ -120,7 +127,7 @@ cursor: pointer;
 }
 
 .eachItem h5:hover{
-  background-color: brown;
+  background-color: rgb(45, 75, 75);
 }
 
 .eachItem i{
@@ -154,4 +161,73 @@ cursor: pointer;
 
 .space{
   margin-top: 20px;
+}
+
+.trashimg{
+  width: 25px;
+  height: 15px;
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.trashimg:hover{
+  color: red;
+  background-color: red;
+  width: 50px;
+}
+
+.dflex{
+  display: flex;
+}
+.cardbody{
+  background-color: darkslategray;
+  margin-top: 3rem;
+  width: 23rem;
+  height: auto;
+  
+}
+
+.cardbodymain{
+  background-color: darkslategray;
+ text-align: left;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  align-items: center;
+  word-wrap: break-word
+}
+
+.para2{
+  word-wrap: break-word;
+  text-decoration: none;
+  list-style: none;
+  width: 20rem;
+  
+}
+
+.beautiful-border {
+ 
+  padding-left: 1px;
+  padding-right: 18px;
+  background-color: white;
+  border-radius: 1px;
+  border: 2px solid;
+  border-image-slice: 1;
+  border-width: 0.3px;
+  border-image-source: linear-gradient(45deg, #ff6b6b, #ffcc5c, #4ecdc4, #556270);
+  box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  text-align:left ;
+  font-size: 1em;
+  color: #333;
+}
+
+.trash-icon {
+  font-size: 30px;
+  color: #555;
+  transition: transform 0.7s ease, color 0.7s ease, box-shadow 0.7s ease;
+}
+
+.trash-icon:hover {
+  transform: scale(1.1);
+  color: #ff6b6b;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }

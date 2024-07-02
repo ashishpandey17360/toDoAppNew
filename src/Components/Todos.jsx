@@ -1,11 +1,25 @@
 /* eslint-disable react/jsx-key */
 // import { useState } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Notes from "../Components/Images/Notes.png";
+
+
+
+function getLocalItem(){
+  let list = localStorage.getItem('lists');
+  console.log(list)
+
+  if(list){
+    return JSON.parse(localStorage.getItem('lists'));
+  }
+  else{
+    return[];
+  }
+}
 
 function Todos() {
   const [input, setInput] = useState();
-  const [item, setItem] = useState([]);
+  const [item, setItem] = useState(getLocalItem()); 
 
   function handleChange(event) {
     setInput(event.target.value);
@@ -24,7 +38,7 @@ function Todos() {
     }
    
   }
-
+  
 
   function deleteItem(id){
 
@@ -41,6 +55,14 @@ function removeAll(){
   setItem([]);
 }
 
+
+
+// to set item in local storage
+
+useEffect(() => {
+	localStorage.setItem("lists",JSON.stringify(item))
+}, [item]);
+
   return (
     <>
       <img className="noteslogo  mx-auto  d-block  " src={Notes} alt="sorry" />
@@ -53,6 +75,7 @@ function removeAll(){
           aria-label="Recipient's username"
           aria-describedby="button-addon2"
           onChange={handleChange}
+         
           value={input}
           // value={input}
         />
@@ -69,26 +92,40 @@ function removeAll(){
 
       {item.map((itemval ,index)=>{
         return(
-          <div className="card d-flex showList">
-        <div className="card-body d-flex  eachItem "  key ={index}>
-          <h5 className="card-title bg-dark ">{itemval}</h5>
-          <i className="fa-solid fa-trash"
+          <div className="card rounded-pill dflex cardbody">
+
           
-          onClick={() => deleteItem(index)}
-          
-          
-          ></i>
+          <div className="card-body rounded-pill dflex cardbodymain"  key ={index}>
+          {/* <h5 className="card-title">{itemval}</h5> */}
+          <div className="beautiful-border">
+          <ul>
+          <li className="card-text text-wrap para2">{itemval}</li>
+         </ul>
+         
+    </div>
         </div>
+
+        <div className="trash-icon">
+        <i className="fa fa-trash"   onClick={() => deleteItem(index)}></i>
+    </div>
+
       </div>
+
+      
+     
           
         )
       })}
 
      
-      <button type="button" className="btn btn-primary my-5 space hover-element" onClick={removeAll}></button>
+      <button type="button" className="btn btn-primary my-5A space hover-element" onClick={removeAll}></button>
       {/* <button className="myButton">Click me</button> */}
     </>
   );
+
+
+
+  
 }
 
 export default Todos;
