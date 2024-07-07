@@ -95,24 +95,21 @@ useEffect(() => {
           <div className="card rounded-pill dflex cardbody">
 
           
-          <div className="card-body rounded-pill dflex cardbodymain"  key ={index}>
-          {/* <h5 className="card-title">{itemval}</h5> */}
-          <div className="beautiful-border">
-          <ul>
-          <li className="card-text text-wrap para2">{itemval}</li>
-         </ul>
-         
-    </div>
-        </div>
+<div className="card-body rounded-pill dflex cardbodymain"  key ={index}>
+{/* <h5 className="card-title">{itemval}</h5> */}
+<div className="beautiful-border">
+<ul>
+<li className="card-text text-wrap para2">{itemval}</li>
+</ul>
 
-        <div className="trash-icon">
-        <i className="fa fa-trash"   onClick={() => deleteItem(index)}></i>
-    </div>
+</div>
+</div>
 
-      </div>
+<div className="trash-icon">
+<i className="fa fa-trash"   onClick={() => deleteItem(index)}></i>
+</div>
 
-      
-     
+</div>
           
         )
       })}
