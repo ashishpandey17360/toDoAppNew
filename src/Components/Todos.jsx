@@ -3,65 +3,61 @@
 import { useEffect, useState } from "react";
 import Notes from "../Components/Images/Notes.png";
 
+function getLocalItem() {
+  let list = localStorage.getItem("lists");
+  console.log(list);
 
-
-function getLocalItem(){
-  let list = localStorage.getItem('lists');
-  console.log(list)
-
-  if(list){
-    return JSON.parse(localStorage.getItem('lists'));
-  }
-  else{
-    return[];
+  if (list) {
+    return JSON.parse(localStorage.getItem("lists"));
+  } else {
+    return [];
   }
 }
 
 function Todos() {
   const [input, setInput] = useState();
-  const [item, setItem] = useState(getLocalItem()); 
+  const [item, setItem] = useState(getLocalItem());
 
   function handleChange(event) {
     setInput(event.target.value);
   }
 
   function handleSubmit() {
-
-    if(!input){
+    if (!input) {
       alert("Please enter a task");
       return;
-
-    }else{
+    } else {
       setItem([...item, input]);
       setInput("");
 
     }
    
   }
-  
 
-  function deleteItem(id){
-
-   const updatedItem= item.filter((val,index) => {
-     return index !== id;
-  })
+  function deleteItem(id) {
+    const updatedItem = item.filter((val, index) => {
+      return index !== id;
+    });
 
   setItem(updatedItem);
+  setItem(updatedItem);
+
+    setItem(updatedItem);
 
   }
 
-// remove all
-function removeAll(){
-  setItem([]);
-}
+  // remove all
+  function removeAll() {
+    setItem([]);
+  }
 
 
 
-// to set item in local storage
+  // to set item in local storage
 
-useEffect(() => {
-	localStorage.setItem("lists",JSON.stringify(item))
-}, [item]);
+  useEffect(() => {
+    localStorage.setItem("lists", JSON.stringify(item));
+  }, [item]);
 
   return (
     <>
@@ -90,32 +86,33 @@ useEffect(() => {
         </button>
       </div>
 
-      {item.map((itemval ,index)=>{
-        return(
+      {item.map((itemval, index) => {
+        return (
           <div className="card rounded-pill dflex cardbody">
+            <div
+              className="card-body rounded-pill dflex cardbodymain"
+              key={index}
+            >
+              {/* <h5 className="card-title">{itemval}</h5> */}
+              <div className="beautiful-border">
+                <ul>
+                  <li className="card-text text-wrap para2">{itemval}</li>
+                </ul>
+              </div>
+            </div>
 
-          
-<div className="card-body rounded-pill dflex cardbodymain"  key ={index}>
-{/* <h5 className="card-title">{itemval}</h5> */}
-<div className="beautiful-border">
-<ul>
-<li className="card-text text-wrap para2">{itemval}</li>
-</ul>
-
-</div>
-</div>
-
-<div className="trash-icon">
-<i className="fa fa-trash"   onClick={() => deleteItem(index)}></i>
-</div>
-
-</div>
-          
-        )
+            <div className="trash-icon">
+              <i className="fa fa-trash" onClick={() => deleteItem(index)}></i>
+            </div>
+          </div>
+        );
       })}
 
-     
-      <button type="button" className="btn btn-primary my-5A space hover-element" onClick={removeAll}></button>
+      <button
+        type="button"
+        className="btn btn-primary my-5A space hover-element"
+        onClick={removeAll}
+      ></button>
       {/* <button className="myButton">Click me</button> */}
     </>
   );
