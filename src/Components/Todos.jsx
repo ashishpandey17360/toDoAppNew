@@ -61,51 +61,58 @@ function Todos() {
 
   return (
     <>
-      <img className="noteslogo  mx-auto  d-block  " src={Notes} alt="sorry" />
-      <h3 className="text-center mt-1">Add your list here</h3>
-      <div className="input-group mb-3  w-50 align-center mx-auto mt-3">
-        <input
-          type="text"
-          className="form-control input"
-          placeholder="Add your notes 👍"
-          aria-label="Recipient's username"
-          aria-describedby="button-addon2"
-          onChange={handleChange}
-         
-          value={input}
-          // value={input}
-        />
-        <button
-          className="btn btn-outline-secondary mr-2 mx-2"
-          onClick={handleSubmit}
-         
-          type="button"
-          id="button-addon2"
-        >
-          <i className="fa-solid fa-plus"></i>
-        </button>
-      </div>
+     <div className="mediaclass">
+       <img className="noteslogo  mx-auto  d-block  " src={Notes} alt="sorry" />
+       <h3 className="text-center mt-1">Add your list here</h3>
+       <div className="input-group mb-3  w-50 align-center mx-auto mt-3">
+         <input
+           type="text"
+           className="form-control input"
+           placeholder="Add your notes 👍"
+           aria-label="Recipient's username"
+           aria-describedby="button-addon2"
+           onChange={handleChange}
+          
+           value={input}
+           // value={input}
+         />
+         <button
+           className="btn btn-outline-secondary mr-2 mx-2"
+           onClick={handleSubmit}
+          
+           type="button"
+           id="button-addon2"
+         >
+           <i className="fa-solid fa-plus"></i>
+         </button>
+       </div>
+     </div>
 
       {item.map((itemval, index) => {
         return (
-          <div className="card rounded-pill dflex cardbody">
-            <div
-              className="card-body rounded-pill dflex cardbodymain"
-              key={index}
-            >
-              {/* <h5 className="card-title">{itemval}</h5> */}
-              <div className="beautiful-border">
-                <ul>
-                  <li className="card-text text-wrap para2">{itemval}</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="trash-icon">
-              <i className="fa fa-trash" onClick={() => deleteItem(index)}></i>
-            </div>
-          </div>
-        );
+         <div className="conta" >
+           <div className="card rounded-pill dflex cardbody">
+             <div
+               className="card-body rounded-pill dflex cardbodymain"
+               key={index}
+             >
+               {/* <h5 className="card-title">{itemval}</h5> */}
+               <div className="beautiful-border">
+                 <ul>
+                   <li className="listmedia" >
+                   <p className="card-text">{itemval}</p>
+                   </li>
+                 </ul>
+               </div>
+             </div>
+          
+             <div className="trash-icon">
+               <i className="fa fa-trash" onClick={() => deleteItem(index)}></i>
+             </div>
+           </div>
+          
+         </div>      
+           );
       })}
 
       <button
@@ -114,6 +121,8 @@ function Todos() {
         onClick={removeAll}
       ></button>
       {/* <button className="myButton">Click me</button> */}
+
+     
     </>
   );
 

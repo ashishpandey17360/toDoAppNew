@@ -33,6 +33,11 @@
   }
 }
 
+
+html{
+  overflow-x: hidden;
+
+}
 .card {
   padding: 2em;
 }
@@ -106,6 +111,21 @@ color: #2a79ae;
 
   display: flex;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+.conta {
+  max-width: 100%;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .conta {
+    flex-direction: column;
+  }
+}
 .eachItem{
   display: flex;
   background-color: darkslategrey;
@@ -114,6 +134,16 @@ color: #2a79ae;
 
 .eachItem:hover{
   background-color: darkslategrey;
+}
+
+
+html{
+  overflow-x: hidden;
+  
+}
+
+body{
+  overflow-x: hidden;
 }
 
 .eachItem h5{
@@ -224,10 +254,49 @@ color: #2a79ae;
   font-size: 30px;
   color: #555;
   transition: transform 0.7s ease, color 0.7s ease, box-shadow 0.7s ease;
+  margin-left: 2rem;
 }
 
 .trash-icon:hover {
   transform: scale(1.1);
   color: #ff6b6b;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+@media only screen and (max-width: 900px){
+html{
+  overflow-x: hidden;
+  /* overflow-y: hidden; */
+}
+
+
+.beautiful-border{
+  width: 100%;
+ 
+ 
+}
+
+.para2{
+ word-break: break-all;
+  text-decoration: none;
+  list-style: none;
+  width: auto;
+  font-size: 30%;
+  word-wrap: break-word;
+  
+
+}
+
+.listmedia{
+  list-style: none;
+}
+
+.trash-icon{
+
+  margin-left: 1rem;
+ 
+ 
+  
+}
 }
